@@ -11,8 +11,8 @@ st.set_page_config(page_title="Dashboard de Predicción", layout="wide")
 @st.cache_resource
 def load_assets():
     try:
-        model = joblib.load('../models/modelo_final.pkl')
-        df = pd.read_csv('../data/processed/inferencia_df_transformado.csv')
+        model = joblib.load('models/modelo_final.pkl')
+        df = pd.read_csv('data/processed/inferencia_df_transformado.csv')
         if 'fecha' in df.columns:
             df['fecha'] = pd.to_datetime(df['fecha'])
         return model, df
